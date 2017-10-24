@@ -9,8 +9,14 @@ class ArticleService extends ActiveBaseService {
 
 	public function access() {
 		return [
-			['article.post.manage', ['create', 'update', 'delete']],
-			['article.post.delete', ['delete']],
+			[
+				'roles' => 'article.post.manage',
+				'only' => ['create', 'update', 'delete'],
+			],
+			[
+				'roles' => 'article.post.delete',
+				'only' => 'delete',
+			],
 		];
 	}
 
