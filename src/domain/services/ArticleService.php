@@ -2,6 +2,7 @@
 
 namespace yii2module\article\domain\services;
 
+use common\enums\rbac\PermissionEnum;
 use yii2lab\domain\data\Query;
 use yii2lab\domain\services\ActiveBaseService;
 
@@ -10,11 +11,11 @@ class ArticleService extends ActiveBaseService {
 	public function access() {
 		return [
 			[
-				'roles' => 'article.post.manage',
+				'roles' => PermissionEnum::ARTICLE_POST_MANAGE,
 				'only' => ['create', 'update', 'delete'],
 			],
 			[
-				'roles' => 'article.post.delete',
+				'roles' => PermissionEnum::ARTICLE_POST_DELETE,
 				'only' => 'delete',
 			],
 		];
