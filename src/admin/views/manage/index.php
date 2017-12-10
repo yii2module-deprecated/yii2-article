@@ -33,4 +33,4 @@ $columns = [
 	'columns' => $columns,
 ]); ?>
 
-<?= Html::a(t('action', 'CREATE'), $baseUrl . 'create', ['class' => 'btn btn-success']) ?>
+<?= Html::a(t('action', 'create'), $baseUrl . 'create', ['class' => 'btn btn-success']) ?>
