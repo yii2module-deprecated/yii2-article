@@ -3,6 +3,8 @@
  * @var $this yii\web\View
  */
 
+use yii2module\guide\module\widgets\Markdown;
+
 $this->title = $article->title;
 
 ?>
@@ -11,6 +13,4 @@ $this->title = $article->title;
 	<?= $article->title ?>
 </h1>
 
-<p>
-	<?= $article->content ?>
-</p>
+<?= Markdown::widget(['content' => $article->content]) ?>
