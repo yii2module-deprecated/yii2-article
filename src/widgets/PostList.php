@@ -4,7 +4,6 @@ namespace yii2module\article\widgets;
 
 use Yii;
 use yii\base\Widget;
-use yii\helpers\Html;
 
 class PostList extends Widget
 {
@@ -15,12 +14,7 @@ class PostList extends Widget
 	public function run()
 	{
 		$collection = Yii::$app->article->article->allForLinks();
-		foreach($collection as $index => $article) {
-			 if($index != 0) {
-				?><span class="text-muted"> | </span><?php
-			}
-			echo Html::a($article->title, ['/article/' . $article->name]);
-		}
+		return $this->render('list', ['collection' => $collection]);
 	}
 	
 }
