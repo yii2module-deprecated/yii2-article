@@ -1,11 +1,11 @@
 <?php
 
+use yii\helpers\Html;
+use yii2lab\misc\enums\HtmlEnum;
+
 /**
  * @var $collection array
  */
-
-use yii\helpers\Html;
-use yii2lab\misc\enums\HtmlEnum;
 
 foreach($collection as $index => $article) {
      if($index != 0) {
@@ -13,5 +13,3 @@ foreach($collection as $index => $article) {
     }
     echo Html::a($article->title, ['/article/' . $article->name]);
 }
-
-?>

@@ -4,6 +4,19 @@ namespace yii2module\article\domain\entities;
 
 use yii2lab\domain\BaseEntity;
 
+/**
+ * Class ArticleEntity
+ *
+ * @package yii2module\article\domain\entities
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $title
+ * @property string $content
+ * @property string $updated_at
+ * @property boolean $is_deleted
+ * @property string $created_at
+ */
 class ArticleEntity extends BaseEntity {
 	
 	protected $id;
