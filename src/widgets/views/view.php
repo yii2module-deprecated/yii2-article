@@ -1,4 +1,14 @@
-<?php if(!empty($article)) { ?>
+<?php
+
+use yii2module\markdown\widgets\Markdown;
+
+/**
+ * @var $contentOnly boolean
+ * @var $headerLevel integer
+ * @var $article \yii2module\article\domain\entities\ArticleEntity
+ */
+
+if(!empty($article)) { ?>
 
     <?php if(empty($contentOnly)) { ?>
         <h<?= $headerLevel ?>>
@@ -7,7 +17,7 @@
     <?php } ?>
     
     <p>
-		<?= $article->content ?>
+		<?= Markdown::widget(['content' => $article->content]) ?>
     </p>
 
 <?php } else { ?>
