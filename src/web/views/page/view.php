@@ -3,7 +3,7 @@
  * @var $this yii\web\View
  */
 
-use yii2module\guide\widgets\Markdown;
+use yii2module\markdown\widgets\Markdown;
 
 $this->title = $article->title;
 
