@@ -34,15 +34,37 @@ return [
 oArticlePostManage
 ```
 
+```
+oArticlePostDelete
+```
+
 Объявляем frontend модуль:
 
 ```php
 return [
-	'modules' => [
-		// ...
-		'article' => 'yii2module\article\web\Module',
-		// ...
-	],
+    'modules' => [
+        // ...
+        'article' => 'yii2module\article\web\Module',
+        'components' => [
+			...
+			'urlManager' => [
+				'rules' => [
+					...
+					// ----------------- guide module -----------------
+
+					'guide/<project_id>/chapter/<id>'=> 'guide/chapter/view',
+					'guide/<project_id>/<id>/update'=> 'guide/article/update',
+					'guide/<project_id>/<id>/delete'=> 'guide/article/delete',
+					'guide/<project_id>/<id>/code'=> 'guide/article/code',
+					'guide/<project_id>/<id>'=> 'guide/article/view',
+					'guide/<project_id>'=> 'guide/article',
+					...
+				],
+			],
+			...
+		],
+        // ...
+    ],
 ];
 ```
 
@@ -69,6 +91,15 @@ return [
 		// ...
 		'article' => 'yii2module\article\api\Module',
 		// ...
+	],
+	'components' => [
+		'urlManager' => [
+			'rules' => [
+                ...
+               ['class' => 'yii\rest\UrlRule', 'controller' => ['v4/article' => 'article/post']],
+                ...
+			],
+		],
 	],
 ];
 ```
