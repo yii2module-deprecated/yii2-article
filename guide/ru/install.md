@@ -110,16 +110,7 @@ return [
 return [
 	'components' => [
 		// ...
-		'article' => [
-			'class' => 'yii2lab\domain\Domain',
-			'path' => 'yii2module\article\domain',
-			'repositories' => [
-				'article',
-			],
-			'services' => [
-				'article',
-			],
-		],
+		'article' => 'yii2module\article\domain\Domain',
 		// ...
 	],
 ];
