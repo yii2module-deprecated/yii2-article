@@ -2,6 +2,7 @@
 
 namespace yii2module\article\admin\forms;
 
+use Yii;
 use yii2module\article\domain\entities\ArticleEntity;
 use yii2lab\domain\base\Model;
 
@@ -24,9 +25,9 @@ class PostForm extends Model
 	public function attributeLabels()
 	{
 		return [
-			'title' 		=> t('main', 'title'),
-			'name' 		=> t('main', 'name'),
-			'content' 		=> t('main', 'content'),
+			'title' 		=> Yii::t('main', 'title'),
+			'name' 		=> Yii::t('main', 'name'),
+			'content' 		=> Yii::t('main', 'content'),
 		];
 	}
 	

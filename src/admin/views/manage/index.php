@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use yii2lab\misc\yii\grid\ActionColumn;
 use yii2lab\misc\yii\grid\TitleColumn;
 
-$this->title = t('article/main', 'list');
+$this->title = Yii::t('article/main', 'list');
 
 $baseUrl = $this->context->getBaseUrl();
 
@@ -18,7 +18,7 @@ $columns = [
 	],
 	[
 		'attribute' => 'name',
-		'label' => t('main', 'name'),
+		'label' => Yii::t('main', 'name'),
 	],
 	[
 		'class' => ActionColumn::className(),
