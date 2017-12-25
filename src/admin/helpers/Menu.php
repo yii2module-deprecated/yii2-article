@@ -12,7 +12,7 @@ class Menu {
 		return [
 			'label' => ['article/main', 'title'],
 			'url' => 'article/manage',
-			'icon' => 'square-o',
+			'icon' => 'file-text',
 			'module' => 'article',
 			'access' => PermissionEnum::ARTICLE_POST_MANAGE,
 		];
