@@ -28,16 +28,11 @@ class ArticleService extends ActiveBaseService {
 		return $entity;
 	}
 
-	public function allByName($name, Query $query = null) {
+	public function allByNames($names, Query $query = null) {
 		$query = Query::forge($query);
-		$query->where('name', $name);
+		$query->where('name', $names);
 		$entity = parent::all($query);
 		return $entity;
 	}
 
-	public function allForLinks(Query $query = null) {
-		$query = Query::forge($query);
-		$articleList = param('article.links');
-		return $this->allByName($articleList, $query);
-	}
 }

@@ -8,12 +8,14 @@ use yii\base\Widget;
 class PostList extends Widget
 {
 	
+	public $names = [];
+	
 	/**
 	 * Runs the widget
 	 */
 	public function run()
 	{
-		$collection = Yii::$app->article->article->allForLinks();
+		$collection = Yii::$app->article->article->allByNames($this->names);
 		return $this->render('list', ['collection' => $collection]);
 	}
 	
