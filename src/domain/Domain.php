@@ -9,7 +9,7 @@ class Domain extends \yii2lab\domain\Domain {
 	public function config() {
 		return [
 			'repositories' => [
-				'article' => Driver::remote() == Driver::DISC ? Driver::DISC : Driver::ACTIVE_RECORD,
+				'article' => Driver::slave() == Driver::DISC ? Driver::DISC : Driver::ACTIVE_RECORD,
 			],
 			'services' => [
 				'article',
