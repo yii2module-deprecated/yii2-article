@@ -7,9 +7,6 @@ use yii2lab\domain\repositories\ActiveArRepository;
 
 class CategoriesRepository extends ActiveArRepository {
 
-	/**
-	 * @inheritdoc
-	 */
 	public function tableName()
 	{
 		return 'article_categories';
