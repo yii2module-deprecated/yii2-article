@@ -24,14 +24,10 @@ class ArticleRepository extends ActiveArRepository {
 		return [
 			'categories' => [
 				'type' => RelationEnum::MANY_TO_MANY,
-				'field' => 'id',
 				'via' => [
 					'id' => 'article.categories',
-					'field' => 'article_id',
-				],
-				'foreign' => [
-					'id' => 'article.categories',
-					'field' => 'category_id',
+					'this' => 'article',
+					'foreign' => 'category',
 				],
 			],
 		];
