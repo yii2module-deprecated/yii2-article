@@ -2,23 +2,43 @@
 
 namespace yii2module\article\domain\repositories\ar;
 
-use yii2module\article\domain\models\Article;
+use yii2lab\domain\enums\RelationEnum;
 use yii2lab\domain\BaseEntity;
 use yii2lab\domain\repositories\ActiveArRepository;
 
 class ArticleRepository extends ActiveArRepository {
-
-	// todo:
-
+	
+	public function tableName()
+	{
+		return 'article';
+	}
+	
 	public function uniqueFields() {
 		return [
 			['name'],
 			['title'],
 		];
 	}
-
+	
+	public function relations() {
+		return [
+			'categories' => [
+				'type' => RelationEnum::MANY_TO_MANY,
+				'field' => 'id',
+				'via' => [
+					'id' => 'article.categories',
+					'field' => 'article_id',
+				],
+				'foreign' => [
+					'id' => 'article.categories',
+					'field' => 'category_id',
+				],
+			],
+		];
+	}
+	
 	protected function initQuery() {
-		$this->query = Article::find()->where(['is_deleted' => '0']);
+		$this->query = $this->model->find()->where(['is_deleted' => '0']);
 	}
 
 	public function delete(BaseEntity $entity) {

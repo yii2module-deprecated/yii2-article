@@ -26,6 +26,7 @@ class ArticleEntity extends BaseEntity {
 	protected $updated_at;
 	protected $is_deleted = false;
 	protected $created_at;
+	protected $categories;
 
 	public function fieldType() {
 		return [
