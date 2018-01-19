@@ -47,28 +47,29 @@ class ArticleTest extends Unit
 		$query->with('categories');
 		$collection = Yii::$app->article->article->all($query);
 		
-		$this->tester->assertEntity([
-			'id' => 1,
-			'name' => 'about',
-			'categories' => [
-				[
-					'id' => 1,
+		$this->tester->assertCollection([
+			0 => [
+				'id' => 1,
+				'name' => 'about',
+				'categories' => [
+					[
+						'id' => 1,
+					],
 				],
 			],
-		], $collection[0]);
-		
-		$this->tester->assertEntity([
-			'id' => 3,
-			'name' => 'contact',
-			'categories' => [
-				[
-					'id' => 1,
-				],
-				[
-					'id' => 2,
+			2 => [
+				'id' => 3,
+				'name' => 'contact',
+				'categories' => [
+					[
+						'id' => 1,
+					],
+					[
+						'id' => 2,
+					],
 				],
 			],
-		], $collection[2]);
+		], $collection);
 	}
 	
 }
