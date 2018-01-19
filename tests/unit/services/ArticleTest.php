@@ -1,14 +1,15 @@
 <?php
+
 namespace yii2module\article\tests\unit\services;
 
 use Codeception\Test\Unit;
-use common\fixtures\ArticleCategoriesFixture;
-use common\fixtures\ArticleCategoryFixture;
-use common\fixtures\ArticleFixture;
 use UnitTester;
 use Yii;
 use yii2lab\domain\BaseEntity;
 use yii2lab\domain\data\Query;
+use yii2module\article\domain\fixtures\ArticleCategoriesFixture;
+use yii2module\article\domain\fixtures\ArticleCategoryFixture;
+use yii2module\article\domain\fixtures\ArticleFixture;
 
 /**
  * Class ArticleTest
