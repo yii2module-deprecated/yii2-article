@@ -72,4 +72,23 @@ class ArticleTest extends Unit
 		], $collection);
 	}
 	
+	public function testOneWithCategories()
+	{
+		
+		/** @var BaseEntity[] $collection */
+		$query = Query::forge();
+		$query->where(['id' => 1]);
+		$query->with('categories');
+		$entity = Yii::$app->article->article->one($query);
+		
+		$this->tester->assertEntity([
+			'id' => 1,
+			'name' => 'about',
+			'categories' => [
+				[
+					'id' => 1,
+				],
+			],
+		], $entity);
+	}
 }
