@@ -42,7 +42,7 @@ class ArticleTest extends Unit
 	public function testAllWithCategories()
 	{
 		
-		/** @var BaseEntity $collection */
+		/** @var BaseEntity[] $collection */
 		$query = Query::forge();
 		$query->with('categories');
 		$collection = Yii::$app->article->article->all($query);
