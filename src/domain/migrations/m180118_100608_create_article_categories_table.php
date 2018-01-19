@@ -24,6 +24,20 @@ class m180118_100608_create_article_categories_table extends Migration
 	public function afterCreate()
 	{
 		$this->myCreateIndexUnique(['article_id', 'category_id']);
+		$this->myAddForeignKey(
+			'article_id',
+			'{{%article}}',
+			'id',
+			'CASCADE',
+			'CASCADE'
+		);
+		$this->myAddForeignKey(
+			'category_id',
+			'{{%article_category}}',
+			'id',
+			'CASCADE',
+			'CASCADE'
+		);
 	}
 
 }
