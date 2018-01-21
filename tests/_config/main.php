@@ -1,11 +1,7 @@
 <?php
 
-use yii2lab\domain\helpers\ConfigHelper;
+$config = require(ROOT_DIR . '/vendor/yii2lab/yii2-app/tests/store/app/common/config/main.php');
 
-return [
-	'components' => [
-		'article' => ConfigHelper::normalizeItemConfig('article', [
-			'class' => 'yii2module\article\domain\Domain',
-		]),
-	],
-];
+return \yii\helpers\ArrayHelper::merge($config, [
+	
+]);
