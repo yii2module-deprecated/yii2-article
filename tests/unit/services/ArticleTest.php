@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2module\article\tests\unit\services;
+namespace tests\unit\services;
 
 use Codeception\Test\Unit;
 use UnitTester;
