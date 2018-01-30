@@ -2,13 +2,11 @@
 
 namespace yii2module\article\admin\helpers;
 
-// todo: отрефакторить - сделать нормальный интерфейс и родителя
-
 use common\enums\rbac\PermissionEnum;
 
 class Menu {
 	
-	static function getMenu() {
+	public function toArray() {
 		return [
 			'label' => ['article/main', 'title'],
 			'url' => 'article/manage',
