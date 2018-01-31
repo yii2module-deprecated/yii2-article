@@ -105,14 +105,15 @@ class ArticleTest extends Unit
 		$entity->name = 'services';
 		$entity->title = 'Our services';
 		$entity->content = 'Our services content';
-		Yii::$app->article->article->create($entity);
+		$entity = Yii::$app->article->article->create($entity);
 		
 		$this->tester->assertEntity([
-			//'id' => 4,
 			'name' => 'services',
 			'title' => 'Our services',
 			'content' => 'Our services content',
 		], $entity);
+		
+		$this->tester->assertEquals(4, $entity->id);
 	}
 	
 	public function testUpdate()
