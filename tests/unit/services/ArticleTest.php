@@ -12,7 +12,7 @@ use yii2module\article\domain\entities\ArticleEntity;
 use yii2module\article\domain\fixtures\ArticleCategoriesFixture;
 use yii2module\article\domain\fixtures\ArticleCategoryFixture;
 use yii2module\article\domain\fixtures\ArticleFixture;
-use yii2woop\account\domain\helpers\TestAuthHelper;
+use yii2module\account\domain\helpers\TestAuthHelper;
 
 /**
  * Class ArticleTest
