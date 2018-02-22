@@ -13,7 +13,7 @@ $baseUrl = $this->context->getBaseUrl();
 
 $columns = [
 	[
-		'class' => TitleColumn::className(),
+		'class' => TitleColumn::class,
 		'baseUrl' => $baseUrl,
 	],
 	[
@@ -21,7 +21,7 @@ $columns = [
 		'label' => Yii::t('main', 'name'),
 	],
 	[
-		'class' => ActionColumn::className(),
+		'class' => ActionColumn::class,
 	],
 ];
 

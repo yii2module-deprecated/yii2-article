@@ -30,15 +30,15 @@ class ArticleTest extends Unit
     {
         $this->tester->haveFixtures([
 	        'category' => [
-		        'class' => ArticleCategoryFixture::className(),
+		        'class' => ArticleCategoryFixture::class,
 		        //'dataFile' => '@tests/_fixtures/data/user.php'
 	        ],
 	        'categories' => [
-		        'class' => ArticleCategoriesFixture::className(),
+		        'class' => ArticleCategoriesFixture::class,
 		        //'dataFile' => '@tests/_fixtures/data/user.php'
 	        ],
         	'article' => [
-                'class' => ArticleFixture::className(),
+                'class' => ArticleFixture::class,
                 //'dataFile' => '@tests/_fixtures/data/user.php'
             ],
         ]);
