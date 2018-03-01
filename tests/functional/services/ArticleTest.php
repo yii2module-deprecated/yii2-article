@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\unit\services;
+namespace tests\functional\services;
 
 use Codeception\Test\Unit;
 use UnitTester;
