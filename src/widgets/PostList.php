@@ -15,7 +15,7 @@ class PostList extends Widget
 	 */
 	public function run()
 	{
-		$collection = Yii::$app->article->article->allByNames($this->names);
+		$collection = Yii::$domain->article->article->allByNames($this->names);
 		return $this->render('list', ['collection' => $collection]);
 	}
 	

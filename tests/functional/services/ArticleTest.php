@@ -50,7 +50,7 @@ class ArticleTest extends Unit
 		/** @var BaseEntity[] $collection */
 		$query = Query::forge();
 		$query->with('categories');
-		$collection = Yii::$app->article->article->all($query);
+		$collection = Yii::$domain->article->article->all($query);
 		
 		$this->tester->assertCollection([
 			0 => [
@@ -84,7 +84,7 @@ class ArticleTest extends Unit
 		$query = Query::forge();
 		$query->where(['id' => 1]);
 		$query->with('categories');
-		$entity = Yii::$app->article->article->one($query);
+		$entity = Yii::$domain->article->article->one($query);
 		
 		$this->tester->assertEntity([
 			'id' => 1,
@@ -101,11 +101,11 @@ class ArticleTest extends Unit
 	{
 		TestAuthHelper::authById(self::ADMIN_ID);
 		
-		$entity = Yii::$app->article->factory->entity->create(ArticleEntity::class);
+		$entity = Yii::$domain->article->factory->entity->create(ArticleEntity::class);
 		$entity->name = 'services';
 		$entity->title = 'Our services';
 		$entity->content = 'Our services content';
-		$entity = Yii::$app->article->article->create($entity);
+		$entity = Yii::$domain->article->article->create($entity);
 		
 		$this->tester->assertEntity([
 			'name' => 'services',
@@ -120,13 +120,13 @@ class ArticleTest extends Unit
 	{
 		TestAuthHelper::authById(self::ADMIN_ID);
 		
-		$entity = Yii::$app->article->article->oneById(1);
+		$entity = Yii::$domain->article->article->oneById(1);
 		$entity->name = '111';
 		$entity->title = '222';
 		$entity->content = '333';
-		Yii::$app->article->article->updateById(1, $entity);
+		Yii::$domain->article->article->updateById(1, $entity);
 		
-		$entity = Yii::$app->article->article->oneById(1);
+		$entity = Yii::$domain->article->article->oneById(1);
 		
 		$this->tester->assertEntity([
 			//'id' => 4,
@@ -141,11 +141,11 @@ class ArticleTest extends Unit
 		TestAuthHelper::authById(self::ADMIN_ID);
 		
 		try {
-			Yii::$app->article->article->deleteById(1);
+			Yii::$domain->article->article->deleteById(1);
 			$this->tester->assertTrue(false);
 		} catch(ForbiddenHttpException $e) {
 			$this->tester->assertTrue(true);
 		}
-		Yii::$app->article->article->oneById(1);
+		Yii::$domain->article->article->oneById(1);
 	}
 }
