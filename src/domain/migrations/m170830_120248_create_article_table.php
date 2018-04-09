@@ -21,7 +21,7 @@ class m170830_120248_create_article_table extends Migration
 			'content' => $this->text(),
 			'is_deleted' => $this->integer(1)->defaultValue(0),
 			'updated_at' => $this->timestamp()->defaultValue(null),
-			'created_at' => $this->timestamp(),
+			'created_at' => $this->timestamp()->defaultValue(null),
 		];
 	}
 
