@@ -7,11 +7,6 @@ use yii2lab\domain\repositories\ActiveArRepository;
 
 class CategoriesRepository extends ActiveArRepository {
 
-	public function tableName()
-	{
-		return 'article_categories';
-	}
-	
 	public function relations() {
 		return [
 			'article' => [
