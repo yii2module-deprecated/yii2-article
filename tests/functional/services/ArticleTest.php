@@ -2,8 +2,7 @@
 
 namespace tests\functional\services;
 
-use Codeception\Test\Unit;
-use UnitTester;
+use yii2lab\test\Test\Unit;
 use Yii;
 use yii\web\ForbiddenHttpException;
 use yii2lab\domain\BaseEntity;
@@ -14,13 +13,6 @@ use yii2module\article\domain\fixtures\ArticleCategoryFixture;
 use yii2module\article\domain\fixtures\ArticleFixture;
 use yii2module\account\domain\v2\helpers\TestAuthHelper;
 
-/**
- * Class ArticleTest
- *
- * @package yii2lab\domain\tests\unit\services
- *
- * @property UnitTester $tester
- */
 class ArticleTest extends Unit
 {
 	
