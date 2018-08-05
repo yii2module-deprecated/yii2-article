@@ -4,6 +4,7 @@ use yii\helpers\ArrayHelper;
 use yii2lab\test\helpers\TestHelper;
 
 $config = [
+	'rbac' => 'yii2lab\rbac\domain\Domain',
 	'article' => 'yii2module\article\domain\Domain',
 ];
 
