@@ -2,8 +2,8 @@
 
 namespace yii2module\article\admin\helpers;
 
-use common\enums\rbac\PermissionEnum;
 use yii2lab\extension\menu\interfaces\MenuInterface;
+use yii2module\article\domain\enums\ArticlePermissionEnum;
 
 class Menu implements MenuInterface {
 	
@@ -13,7 +13,7 @@ class Menu implements MenuInterface {
 			'url' => 'article/manage',
 			'icon' => 'file-text-o',
 			'module' => 'article',
-			'access' => PermissionEnum::ARTICLE_POST_MANAGE,
+			'access' => ArticlePermissionEnum::POST_MANAGE,
 		];
 	}
 
