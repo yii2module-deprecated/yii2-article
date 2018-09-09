@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii2lab\misc\enums\HtmlEnum;
+use yii2lab\extension\web\enums\HtmlEnum;
 
 /**
  * @var $collection array
