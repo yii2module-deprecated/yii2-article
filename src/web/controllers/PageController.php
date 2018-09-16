@@ -9,9 +9,9 @@ class PageController extends Controller {
 
 	public function actionView($id) {
 		if(is_numeric($id)) {
-			$article = Yii::$domain->article->article->oneById($id);
+			$article = \App::$domain->article->article->oneById($id);
 		} else {
-			$article = Yii::$domain->article->article->oneByName($id);
+			$article = \App::$domain->article->article->oneByName($id);
 		}
 		return $this->render('view', ['article' => $article]);
 	}

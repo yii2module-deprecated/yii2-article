@@ -19,7 +19,7 @@ class PostView extends Widget
 	public function run()
 	{
 		try {
-			$article = Yii::$domain->article->article->oneByName($this->name);
+			$article = \App::$domain->article->article->oneByName($this->name);
 		} catch(NotFoundHttpException $e) {
 			$article = null;
 		}
