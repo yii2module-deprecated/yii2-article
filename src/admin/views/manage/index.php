@@ -4,8 +4,8 @@
 
 use yii\grid\GridView;
 use yii\helpers\Html;
-use yii2lab\misc\yii\grid\ActionColumn;
-use yii2lab\misc\yii\grid\TitleColumn;
+use yii2lab\extension\web\grid\ActionColumn;
+use yii2lab\extension\web\grid\TitleColumn;
 
 $this->title = Yii::t('article/main', 'list');
 
